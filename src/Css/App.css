@@ -1,0 +1,69 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: Epet20Logo-movimiento infinite 3s linear;
+  }
+}
+
+.App-header {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+
+@keyframes Epet20Logo-movimiento {
+ 0% {
+  transform: translateY(10px);
+
+
+ }
+
+
+ 100% {
+  transform: translateY(-10px);
+
+
+ }
+ 50% {
+  transform: translateY(10px);
+
+
+ }
+
+
+ 0% {
+  transform: translateY(-10px);
+
+
+ }
+
+}
+@media (prefers-reduced-motion: no-preference) {
+  .Titulo-Booky {
+    animation: Titulo-Booky-Movimiento infinite 2s linear;
+  }
+}
+.Titulo-Booky {
+
+}
+
+
+  
+ 
+ 
+ 
