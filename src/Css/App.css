@@ -59,7 +59,8 @@
   }
 }
 .Titulo-Booky {
-
+  align-items: center;
+  justify-content: center;
 }
 
 
