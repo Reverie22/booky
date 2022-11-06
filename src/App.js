@@ -18,12 +18,6 @@ function App() {
 
     
     <Router>
-      <div className='container mt-5'>
-        <div className='btn-group'>
-          <Link to="/" className="btn btn-dark">Inicio</Link>
-        </div>
-      </div>
-      
       <Switch>
         <Route path="/" exact>
       <SplashScreenComponent/>

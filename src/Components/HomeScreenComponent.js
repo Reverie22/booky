@@ -1,9 +1,17 @@
 import React from 'react'
+import '../Css/HomeScreenCSS.css';
 
 const HomeScreenComponent = () => {
   return (
-    <div>
-      <h1>Hola</h1>
+    <div className='Contenedor'>
+    <header>
+    <div className='Navbar'>
+      <h1 className='TituloBar'>Navbar</h1>
+      <a href='/Login'>Inicio</a>
+    </div>
+    </header>
+    
+    
     </div>
   )
 }
