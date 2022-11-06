@@ -8,6 +8,8 @@ const HomeScreenComponent = () => {
     <div className='Navbar'>
       <h1 className='TituloBar'>Navbar</h1>
       <a href='/Login'>Inicio</a>
+      <a href='/Login'>Inicio</a>
+      <a href='/Login'>Inicio</a>
     </div>
     </header>
     
