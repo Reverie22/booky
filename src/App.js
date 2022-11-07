@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link,} from 'react-router-dom';
 import SplashScreenComponent from './Components/SplashScreenComponent';
 import HomeScreenComponent from './Components/HomeScreenComponent';
 import './Css/App.css';
+import LoginComponent from './Components/LoginComponent';
 const Conteo = function() {
   setTimeout(function(){
     // CambiarPantalla();
@@ -24,7 +25,7 @@ function App() {
       </Route>
 
       <Route path="/Login">
-      <SplashScreenComponent/>
+      <LoginComponent/>
       </Route>
 
       <Route path="/HomeScreen">
