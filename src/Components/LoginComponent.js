@@ -1,9 +1,14 @@
-import React from 'react'
 
-const LoginComponent = () => {
-  return (
-    <div><h1>Yola</h1></div>
-  )
+import '../Css/LoginScreenCSS.css';
+import React from 'react';
+
+const Formulario = () => {
+	return (
+		
+    <div className='fondo'>
+			
+      </div>
+	);
 }
-
-export default LoginComponent
+ 
+export default Formulario;

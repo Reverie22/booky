@@ -1,0 +1,21 @@
+@import url(General.css);
+
+
+.fondo {
+   display: flex;
+    background-color: #8bd7f775;
+    height: 100vh;
+}
+
+
+form {
+    margin: auto;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center ;
+    background-color: #73d1fa;
+    box-shadow: 1px 1px 5px 3px black;
+    border-radius: 10px;
+}
