@@ -11,11 +11,31 @@
 form {
     margin: auto;
     padding: 50px;
-    display: flex;
+    padding-top: 150px;
+    display: block;
     align-items: center;
     justify-content: center;
     text-align: center ;
     background-color: #73d1fa;
     box-shadow: 1px 1px 5px 3px black;
     border-radius: 10px;
+}
+
+.campos {
+
+    padding: 15px;
+}
+.inputs {
+    height: 30px;
+    width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+.labels {
+    font-size: small;
+    display: block;
+    text-align: left;
+}
+.App-logo {
+    
 }
