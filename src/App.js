@@ -24,7 +24,7 @@ function App() {
       <SplashScreen/>
       </Route>
 
-      <Route path="/Login">
+      <Route path="/LoginScreen">
       <LoginScreen/>
       </Route>
 
