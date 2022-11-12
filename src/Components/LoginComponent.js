@@ -9,7 +9,7 @@ const Formulario = () => {
     <div className='fondo'>
     
 			<form>
-      <img src={logo} className='App-logo' alt="logo" />
+      <img src={logo} className='logo' alt="logo" />
         <div className='campos'>
           <label className='labels' htmlFor='nombre'>Nombre</label>
           <input className='inputs' type='text' id='nombre'name='nombre' placeholder='Su nombre aqui...'/>
