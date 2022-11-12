@@ -3,7 +3,7 @@
 
 .fondo {
    display: flex;
-    background-color: #8bd7f775;
+    background-color: #8bd7f7a6;
     height: 100vh;
 }
 
@@ -23,7 +23,7 @@ form {
 
 .campos {
 
-    padding: 15px;
+    padding-top: 15px;
 }
 .inputs {
     height: 30px;
@@ -47,6 +47,8 @@ form {
 
 button[type="submit"] {
     margin-top: 20px;
+    align-items: center;
+    justify-content: center;
 	display: block;
 	background: #0085FF;
 	font-weight: 600;
