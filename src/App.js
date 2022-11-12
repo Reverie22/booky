@@ -1,9 +1,9 @@
 
 import { BrowserRouter as Router, Switch, Route, Link,} from 'react-router-dom';
-import SplashScreenComponent from './Components/SplashScreenComponent';
-import HomeScreenComponent from './Components/HomeScreenComponent';
+import SplashScreen from './Screens/SplashScreen';
+import HomeScreen from './Screens/HomeScreen';
 import './Css/App.css';
-import LoginComponent from './Components/LoginComponent';
+import LoginScreen from './Screens/LoginScreen';
 const Conteo = function() {
   setTimeout(function(){
     // CambiarPantalla();
@@ -21,15 +21,15 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact>
-      <SplashScreenComponent/>
+      <SplashScreen/>
       </Route>
 
       <Route path="/Login">
-      <LoginComponent/>
+      <LoginScreen/>
       </Route>
 
       <Route path="/HomeScreen">
-      <HomeScreenComponent/>
+      <HomeScreen/>
       </Route>
       </Switch>
       
