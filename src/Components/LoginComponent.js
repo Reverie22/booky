@@ -6,12 +6,19 @@ import { Formik } from 'formik';
 const Formulario = () => {
 	return (
     <Formik
-    onSubmit={()=>{
+    initialValues={{
+      nombre:'Tu nombre',
+      correo: 'Tucorreo@algo.com'
+    }}
+    onSubmit={(valores)=>{
+
+      
+      console.log(valores);
       console.log('form enviado');
 
 
     }}>
-		{( handleSubmit)=> (
+		{( values,  handleSubmit,handleChange, handleBlur)=> (
  <div className='fondo' onSubmit={handleSubmit}>
  <form>
  <img src={logo} className='logo' alt="logo" />
@@ -22,7 +29,11 @@ const Formulario = () => {
      type='text' 
      id='nombre'
      name='nombre'
-      placeholder='Su nombre aqui...'/>
+      placeholder='Su nombre aqui...'
+      value={values.nombre}
+      onChange={handleChange}
+      onBlur={handleBlur}
+      />
    </div>
    <div className='campos'>
      <label className='labels' htmlFor='Apellido'>Apellido</label>
@@ -31,7 +42,11 @@ const Formulario = () => {
      type='text' 
      id='Apellido'
      name='Apellido' 
-     placeholder='Su apellido aqui...'/>
+     placeholder='Su apellido aqui...'
+     value={values.nombre}
+     onChange={handleChange}
+     onBlur={handleBlur}
+     />
    </div>
    <div className='campos'>
      <label className='labels' htmlFor='correo'>correo</label>
@@ -40,7 +55,11 @@ const Formulario = () => {
      type='email' 
      id='correo'
      name='correo' 
-     placeholder='Su@correoaqui.com'/>
+     placeholder='Su@correoaqui.com'
+     value={values.correo}
+     onChange={handleChange}
+     onBlur={handleBlur}
+     />
    </div>
    <div className='campos'>
      <label className='labels' htmlFor='contraseña'>Contraseña</label>
@@ -49,7 +68,11 @@ const Formulario = () => {
      type='password' 
      id='contraseña'
      name='contraseña' 
-     placeholder='Su contraseña aqui...'/>
+     placeholder='Su contraseña aqui...'
+     value={values.nombre}
+     onChange={handleChange}
+     onBlur={handleBlur}
+     />
    </div>
    <button type='submit'>Enviar</button>
  </form>
