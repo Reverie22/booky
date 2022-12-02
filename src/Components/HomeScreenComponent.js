@@ -7,7 +7,7 @@ const HomeScreenComponent = () => {
     <header>
     <div className='Navbar'>
       <h1 className='TituloBar'>¡Booky!</h1>
-      <a href='/Login'>Opciones</a>
+      <a href='/LoginScreen'>Opciones</a>
       <a href='/Login'>Cursos</a>
       <a href='/Login'>Inicio</a>
     </div>
