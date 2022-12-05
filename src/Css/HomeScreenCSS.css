@@ -1,42 +1,58 @@
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-
+    
 
 }
 
 
 
+header {
+
+    background-color: #1b0452;
+    display: contents;
+    z-index: 0;
+}
 
 
-.Contenedor {
+.Cuerpo {
+height: 30000px;
+    background-color: #1b0452;
 
-    background-color: #333;
 
 }
 
 
 
 .Navbar {
-    
-    position: fixed;
+    padding-top: 30px ;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: block;
     top: 50px;
     left: 0;
     top: 0;
     width: 100%;
-    height: 8vh;
-    background: #8BD7F7;
+    height: 55px;
+    background: #1b0452;
     z-index: 100;
-    margin: 0;
-    box-shadow: 0px 2px 10px #333;
+    margin: auto;
+    padding: auto;
+    
+    
 
 
 
 
 }
+ 
+
 .Navbar a {
-    float: right;
-    display: block;
+    margin: 0;
+    padding: 0;
+   align-items: center;
+   justify-content: center;
     text-decoration: none;
     padding: 4px;
     margin-top: 25px;
@@ -68,7 +84,49 @@
 
 
 .TituloBar {
-float: left;
-padding-left: 15px;
+    display: block;
+    margin-left: 55px;
+    color: white;
+    float: left;
+    justify-content: left;
+    align-items: left;
+
+}
+.Info p {
+    
+    float: left;
+    align-items: left;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+
+}
+.Info {
+    
+    display: flex;
+    margin: 0;
+    width: 800px; 
+    padding: 50px;
+    padding-top: 250px;
+    padding-left: 150px;
+    font-family: 'Lexend Deca', sans-serif; 
+    color: white;
+    font-size: 44px;    
+
+}
+
+
+.Banner {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    padding: auto;
+    width: 1000px;
+    padding-top: 100px;
+    padding-left: 900px;
+    
+
 
 }
