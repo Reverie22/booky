@@ -10,6 +10,17 @@ const Formulario = () => {
       nombre:'Tu nombre',
       correo: 'Tucorreo@algo.com'
     }}
+
+
+
+    validate ={(valores) => {
+      let errores = {};
+      if (!valores.nombre){
+        errores.nombre = 'porfavor ingrese un nombre'
+      }
+    return erores;
+    }}
+    
     onSubmit={(valores)=>{
 
       
@@ -17,7 +28,9 @@ const Formulario = () => {
       console.log('form enviado');
 
 
-    }}>
+    }}
+    
+    >
 		{( values,  handleSubmit,handleChange, handleBlur)=> (
  <div className='fondo' onSubmit={handleSubmit}>
  <form>
