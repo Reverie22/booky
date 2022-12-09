@@ -4,6 +4,7 @@ import SplashScreen from './Screens/SplashScreen';
 import HomeScreen from './Screens/HomeScreen';
 import './Css/App.css';
 import LoginScreen from './Screens/LoginScreen';
+import RegisterScreen from './Screens/LoginScreen';
 const Conteo = function() {
   setTimeout(function(){
     // CambiarPantalla();
@@ -22,6 +23,10 @@ function App() {
       <Switch>
         <Route path="/" exact>
       <SplashScreen/>
+
+      </Route>
+      <Route path="/RegisterScreen">
+      <RegisterScreen/>
       </Route>
 
       <Route path="/LoginScreen">

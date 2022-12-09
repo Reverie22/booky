@@ -1,0 +1,86 @@
+@import url(General.css);
+
+
+.LinkLogin {
+    background-color: #000000;
+    width: 100%;
+    display: flex;
+    font-size: 300px;
+}
+
+.fondo {
+   display: flex;
+    background-color: #8bd7f7a6;
+    height: 100vh;
+}
+
+
+form {
+    margin: auto;
+    padding: 50px;
+    padding-top: 50px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center ;
+    background-color: #73d1fa;
+    box-shadow: 1px 10px 30px 2px black;
+    border-radius: 10px;
+}
+
+.campos {
+
+    padding-top: 15px;
+}
+.inputs {
+    height: 35px;
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+	border-radius: 5px;
+    border: none;
+	cursor: vertical-text;
+    transition: .3s ease all;
+
+}
+.labels {
+    font-size: 16px;
+    display: block;
+    text-align: left;
+}
+.logo {
+    width: 30%;
+    
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+  
+	background: #0085FF;
+	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 20px;
+	transition: .3s ease all;
+    
+   
+}
+.Enviado {
+    color: rgb(0, 216, 0);
+    border-radius: 10px;
+    z-index: 1;
+}
+button:hover {
+
+    background: #f5f5f579;
+    color: #000000;
+    transform: scale(1.05);
+
+}
