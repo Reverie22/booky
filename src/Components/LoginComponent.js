@@ -1,9 +1,13 @@
 import logo from '../Imagenes/logo.png';
+import { useState } from 'react';
 import '../Css/LoginScreenCSS.css';
 import React from 'react';
 import { Formik } from 'formik';
 
+
+
 const Formulario = () => {
+  const [formularioenviado, cambiarformularioenviado] = useState(false); 
 	return (
     <Formik
     initialValues={{
@@ -13,26 +17,20 @@ const Formulario = () => {
 
 
 
-    validate ={(valores) => {
-      let errores = {};
-      if (!valores.nombre){
-        errores.nombre = 'porfavor ingrese un nombre'
-      }
-    return errores;
-    }}
-
+   
     onSubmit={(valores)=>{
 
       
       console.log(valores);
       console.log('form enviado');
-      console.log(errors);
+      cambiarformularioenviado(true);
+      
 
 
     }}
     
     >
-		{( values, errors, handleSubmit,handleChange, handleBlur)=> (
+		{( values,handleSubmit,handleChange, handleBlur)=> (
  <div className='fondo' onSubmit={handleSubmit}>
  <form>
  <img src={logo} className='logo' alt="logo" />
