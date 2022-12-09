@@ -2,7 +2,7 @@ import logo from '../Imagenes/logo.png';
 import { useState } from 'react';
 import '../Css/LoginScreenCSS.css';
 import React from 'react';
-import { Formik } from 'formik';
+import { Formik, Form, ErrorMessage, Field } from 'formik';
 
 
 
@@ -24,6 +24,7 @@ const Formulario = () => {
       console.log(valores);
       console.log('form enviado');
       cambiarformularioenviado(true);
+      console.log(cambiarformularioenviado);
       
 
 
@@ -31,8 +32,8 @@ const Formulario = () => {
     
     >
 		{( values,handleSubmit,handleChange, handleBlur)=> (
- <div className='fondo' onSubmit={handleSubmit}>
- <form>
+ <div className='fondo'>
+ <Form>
  <img src={logo} className='logo' alt="logo" />
    <div className='campos'>
      <label className='labels' htmlFor='nombre'>Nombre</label>
@@ -87,7 +88,8 @@ const Formulario = () => {
      />
    </div>
    <button type='submit'>Enviar</button>
- </form>
+   {formularioenviado && <p className='Enviado'>Formulario enviado con exito!</p>}
+ </Form>
  </div>
     )}
    

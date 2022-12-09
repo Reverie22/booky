@@ -65,6 +65,11 @@ button[type="submit"] {
     
    
 }
+.Enviado {
+    color: rgb(0, 216, 0);
+    border-radius: 10px;
+    z-index: 1;
+}
 button:hover {
 
     background: #f5f5f579;
