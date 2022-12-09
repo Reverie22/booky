@@ -18,20 +18,21 @@ const Formulario = () => {
       if (!valores.nombre){
         errores.nombre = 'porfavor ingrese un nombre'
       }
-    return erores;
+    return errores;
     }}
-    
+
     onSubmit={(valores)=>{
 
       
       console.log(valores);
       console.log('form enviado');
+      console.log(errors);
 
 
     }}
     
     >
-		{( values,  handleSubmit,handleChange, handleBlur)=> (
+		{( values, errors, handleSubmit,handleChange, handleBlur)=> (
  <div className='fondo' onSubmit={handleSubmit}>
  <form>
  <img src={logo} className='logo' alt="logo" />
