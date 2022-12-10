@@ -93,7 +93,7 @@ height: 30000px;
 
 }
 .Info p {
-    
+display: flex;    
     float: left;
     align-items: left;
     text-align: left;
@@ -106,13 +106,27 @@ height: 30000px;
     display: flex;
     margin: 0;
     width: 800px; 
-    padding: 50px;
-    padding-top: 250px;
+    padding: 0px;
+    padding-top: 100px;
     padding-left: 150px;
     font-family: 'Lexend Deca', sans-serif; 
     color: white;
     font-size: 44px;    
+    z-index: 2;
+}
 
+.Info2 {
+display: flex;
+float: left;
+padding: 0;
+padding-left: 12%;
+width: 400px;
+margin: 0;
+font-size: 20px;
+align-items: center;
+text-align: center;
+justify-content: center;
+color: wheat;
 }
 
 
@@ -123,10 +137,10 @@ height: 30000px;
     display: flex;
     margin: auto;
     padding: auto;
-    width: 1000px;
+    width: 350px;
     padding-top: 100px;
-    padding-left: 900px;
-    
+    padding-left: 70%;
+    z-index: 1;
 
 
 }

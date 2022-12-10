@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Css/HomeScreenCSS.css';
-import ImagenBanner from '../Imagenes/ImagenBanner.jpg';
+import programador from '../Imagenes/programador.png';
 
 const HomeScreenComponent = () => {
   return (
@@ -15,9 +15,14 @@ const HomeScreenComponent = () => {
     </div>
     </header>
     <div className='Cuerpo'>
-    <img src={ImagenBanner} className='Banner' alt="Banner" />
+    <img src={programador} className='Banner' alt="Banner" />
+  
     <div className='Info'>
-      <p>Bienvenido! textotexto textotexto  textotexto  textotexto  textotexto  textotexto  textotexto  textotexto  textotexto  textotexto    </p>
+      <h2>Bienvenido!</h2>
+      
+    </div>
+    <div className='Info2'>
+    <p>Esta es una Aplicacion para poder facilitar el medio de comunicacion entre los padres y los profesores!</p>
     </div>
     </div>
     
