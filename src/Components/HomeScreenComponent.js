@@ -11,7 +11,7 @@ const HomeScreenComponent = () => {
       <div className='Navbar'>
       <a href='/LoginScreen'>Opciones</a>
       <a href='/Login'>Cursos</a>
-      <a href='/Login'>Inicio</a>
+      <a href='/Login'>Inicioo</a>
     </div>
     </header>
     <div className='Cuerpo'>
