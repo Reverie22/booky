@@ -52,6 +52,13 @@ form {
     width: 30%;
     
 }
+.Genero {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    justify-content: left;
+    padding-top: 15px;
+}
 
 button[type="submit"] {
     margin-top: 20px;

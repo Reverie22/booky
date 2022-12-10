@@ -31,60 +31,48 @@ const Formulario = () => {
     }}
     
     >
-		{( values,handleSubmit,handleChange, handleBlur)=> (
+		{( values,handleChange, handleBlur)=> (
  <div className='fondo'>
  <Form>
  <img src={logo} className='logo' alt="logo" />
    <div className='campos'>
      <label className='labels' htmlFor='nombre'>Nombre</label>
-     <input 
+     <Field 
      className='inputs' 
      type='text' 
      id='nombre'
      name='nombre'
       placeholder='Su nombre aqui...'
-      value={values.nombre}
-      onChange={handleChange}
-      onBlur={handleBlur}
       />
    </div>
    <div className='campos'>
      <label className='labels' htmlFor='Apellido'>Apellido</label>
-     <input 
+     <Field 
      className='inputs' 
      type='text' 
      id='Apellido'
      name='Apellido' 
      placeholder='Su apellido aqui...'
-     value={values.nombre}
-     onChange={handleChange}
-     onBlur={handleBlur}
      />
    </div>
    <div className='campos'>
      <label className='labels' htmlFor='correo'>correo</label>
-     <input 
+     <Field 
      className='inputs' 
      type='email' 
      id='correo'
      name='correo' 
      placeholder='Su@correoaqui.com'
-     value={values.correo}
-     onChange={handleChange}
-     onBlur={handleBlur}
      />
    </div>
    <div className='campos'>
      <label className='labels' htmlFor='contraseña'>Contraseña</label>
-     <input 
+     <Field 
      className='inputs' 
      type='password' 
      id='contraseña'
      name='contraseña' 
      placeholder='Su contraseña aqui...'
-     value={values.nombre}
-     onChange={handleChange}
-     onBlur={handleBlur}
      />
    </div>
    <button type='submit'>Enviar</button>
