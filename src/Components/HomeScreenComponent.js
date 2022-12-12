@@ -17,7 +17,8 @@ const HomeScreenComponent = () => {
     <div className='Cuerpo'>
     <img src={ImagenBanner} className='Banner' alt="Banner" />
     <div className='Info'>
-      <p>Bienvenido! textotexto textotexto  textotexto  textotexto  textotexto  textotexto  textotexto  textotexto  textotexto  textotexto    </p>
+      <p>Bienvenido a Booky!</p>
+      <p>Booky es una app </p>
     </div>
     </div>
     

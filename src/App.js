@@ -6,17 +6,17 @@ import './Css/App.css';
 import LoginScreen from './Screens/LoginScreen';
 import RegisterScreen from './Screens/RegisterScreen';
 import firebase from './firebase/firebase';
-import "firebase/auth";
+import {auth} from "firebase/auth";
 
 
 
 
 function App() {
-  // firebase.auth().onAuthStateChanged(user => {
-  //   console.log(user);
+  firebase.auth().onAuthStateChanged(user => {
+    console.log(user);
     
-  //   user ? console.log('tu vieja gato') : console.log('tu mama') ;
-  // });
+    user ? console.log('tu vieja gato') : console.log('tu mama') ;
+  });
   
   return (
     
