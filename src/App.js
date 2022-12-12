@@ -12,11 +12,11 @@ import {auth} from "firebase/auth";
 
 
 function App() {
-  firebase.auth().onAuthStateChanged(user => {
-    console.log(user);
+  // firebase.auth().onAuthStateChanged(user => {
+  //   console.log(user);
     
-    user ? console.log('tu vieja gato') : console.log('tu mama') ;
-  });
+  //   user ? console.log('tu vieja gato') : console.log('tu mama') ;
+  // });
   
   return (
     
