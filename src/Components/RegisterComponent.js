@@ -2,112 +2,100 @@ import logo from '../Imagenes/logo.png';
 import { useState } from 'react';
 import '../Css/RegisterScreenCSS.css';
 import React from 'react';
-import { Formik, Form, ErrorMessage, Field } from 'formik';
-import RegistrarUsuario from '../FuncionesEspeciales/RegistrarUsuario';
+import { getAuth, signOut } from 'firebase/auth';
+import firebaseApp from '../firebase/firebase';
+import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc} from 'firebase/firestore';
+
+
+//funciones
+const CambiarPantalla = () => {
+  console.log('hpla');
 
 
 
+}
 
+const auth = getAuth(firebaseApp)
+const db = getFirestore(firebaseApp)
+const Formulario = ({Correousuario}) => {
+	const valorinicial = {
+    nombre: '',
+    apellido: '',
+    contraseña: '',
+    mail: '',
+  }
+  const [user, setUser] = useState(valorinicial)
 
+  const capturarInputs = (e) => {
+    const {name, value} = e.target;
+    setUser({...user, [name]:value})
+  }
 
-
-
-const Formulario = () => {
-  const [formularioenviado, cambiarformularioenviado] = useState(false); 
-	return (
-    <Formik
-    initialValues={{
-      nombre:'Tu nombre',
-      correo: 'Tucorreo@algo.com'
-    }}
-
-
-
-   
-    onSubmit={(valores)=>{
+  const guardarDatos = async(e)=>{
+    e.preventDefault();
+    // console.log(user);
+    try {
+      await addDoc(collection(db,'users'),{
+        ...user
+    })
+    } catch (error) {
+      console.log(error)
       
-      function formularioenviado() {
-        //obtener info del formulario
-        const Nombre = document.getElementById('Nombre').value;
-        const Apellido = document.getElementById('Apellido').value;
-        const Contraseña = document.getElementById('Contraseña').value;
-        const Correo = document.getElementById('Correo').value;
-        //enviar informacion a firebase
-        const valores = { Nombre, Apellido, Contraseña, Correo,};
-        RegistrarUsuario(valores);
+    }
+    setUser({...valorinicial})
+  }
+  
+  
+  return (
+     
 
-        console.log(valores)
-      
-      }
-      
-      console.log('form enviado');
-      cambiarformularioenviado(true);
-      console.log(cambiarformularioenviado);
-
-
-    }}
-    
-    >
-		{( values,handleChange, handleBlur)=> (
  <div className='fondo'>
- <Form>
+ <form onSubmit={guardarDatos}>
  <img src={logo} className='logo' alt="logo" />
    <div className='campos'>
      <label className='labels' htmlFor='nombre'>Nombre</label>
-     <Field 
+     <input 
      className='inputs' 
      type='text' 
-     id='Nombre'
-     name='Nombre'
+     name="nombre"
       placeholder='Su nombre aqui...'
+      onChange={capturarInputs} value={user.nombre}
       />
    </div>
    <div className='campos'>
-     <label className='labels' htmlFor='Apellido'>Apellido</label>
-     <Field 
+     <label className='labels' htmlFor='apellido'>Apellido</label>
+     <input 
      className='inputs' 
      type='text' 
-     id='Apellido'
-     name='Apellido' 
+     name='apellido' 
      placeholder='Su apellido aqui...'
+     onChange={capturarInputs} value={user.apellido}
      />
    </div>
    <div className='campos'>
      <label className='labels' htmlFor='correo'>correo</label>
-     <Field 
+     <input 
      className='inputs' 
      type='email' 
-     id='Correo'
-     name='Correo' 
+     id='mail'
+     name='mail' 
      placeholder='Su@correoaqui.com'
+     onChange={capturarInputs} value={user.mail}
      />
    </div>
    <div className='campos'>
-     <label className='labels' htmlFor='contraseña'>Contraseña</label>
-     <Field 
+     <label className='labels'>Contraseña</label>
+     <input 
      className='inputs' 
      type='password' 
-     id='Contraseña'
-     name='Contraseña' 
+     name='contraseña' 
      placeholder='Su contraseña aqui...'
+     onChange={capturarInputs} value={user.contraseña}
      />
    </div>
-   <div className='Genero'>
-      <Field name="Genero" as="select">
-      <option value="Masculino">Masculino</option>
-      <option value="Femenino">Femenino</option>
-      <option value="Non">Sin definir</option>
-
-      </Field>
-
-   </div>
-   <button type='submit'>Enviar</button>
-   {formularioenviado && <p className='Enviado'>Formulario enviado con exito!</p>}
- </Form>
+   <button onClick={CambiarPantalla} type='submit'>Enviar</button>
+ </form>
  </div>
-    )}
-   
-      </Formik>
 	);
 }
  
