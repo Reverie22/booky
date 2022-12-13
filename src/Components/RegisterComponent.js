@@ -5,11 +5,12 @@ import React from 'react';
 import { getAuth, signOut } from 'firebase/auth';
 import firebaseApp from '../firebase/firebase';
 import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc} from 'firebase/firestore';
-
+import HomeScreenComponent from './HomeScreenComponent';
 
 //funciones
 const CambiarPantalla = () => {
   console.log('hpla');
+  
 
 
 
