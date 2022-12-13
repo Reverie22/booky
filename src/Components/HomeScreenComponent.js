@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Css/HomeScreenCSS.css';
-import ImagenBanner from '../Imagenes/ImagenBanner.jpg';
+import programador from '../Imagenes/programador.png';
 
 const HomeScreenComponent = () => {
   return (
@@ -11,14 +11,18 @@ const HomeScreenComponent = () => {
       <div className='Navbar'>
       <a href='/LoginScreen'>Opciones</a>
       <a href='/Login'>Cursos</a>
-      <a href='/Login'>Inicio</a>
+      <a href='/Login'>Inicioo</a>
     </div>
     </header>
     <div className='Cuerpo'>
-    <img src={ImagenBanner} className='Banner' alt="Banner" />
+    <img src={programador} className='Banner' alt="Banner" />
+  
     <div className='Info'>
-      <p>Bienvenido a Booky!</p>
-      <p>Booky es una app </p>
+      <h2>Bienvenido!</h2>
+      
+    </div>
+    <div className='Info2'>
+    <p>Esta es una Aplicacion para poder facilitar el medio de comunicacion entre los padres y los profesores!</p>
     </div>
     </div>
     
