@@ -4,6 +4,8 @@ import programador from '../Imagenes/programador.png';
 
 const HomeScreenComponent = () => {
   return (
+   
+   
     <div className='Contenedor'>
     <header>
     
@@ -27,7 +29,9 @@ const HomeScreenComponent = () => {
     </div>
     
     </div>
+  
   )
+  
 }
 
 export default HomeScreenComponent

@@ -49,7 +49,10 @@ const Formulario = ({Correousuario}) => {
   
 let navigate = useNavigate();
   return (
-     
+    <div>
+    {
+   !user &&
+
 
  <div className='fondo'>
  <form onSubmit={guardarDatos}>
@@ -98,6 +101,10 @@ let navigate = useNavigate();
    <button onClick={() => navigate("/HomeScreen")} type='submit'>Enviar</button>
  </form>
  </div>
+ }
+ {user && <button className='Cerrarsesion'>Cerrar sesion</button>}
+ </div>
+
 	);
 }
  
