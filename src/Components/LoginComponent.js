@@ -3,16 +3,36 @@ import { useState } from 'react';
 import '../Css/LoginScreenCSS.css';
 import React from 'react';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
+import { getAuth } from 'firebase/auth';
 
 
+const auth = getAuth(appFirebase)
+const Formulario = ({Correousuario}) => {
+	const valorinicial = {
+    Nombre: '',
+    Apellido: '',
+    Contraseña: '',
+    Mail: '',
+  }
+  const {user, setUser} = useState(valorinicial)
 
+  const capturarInputs = (e) => {
+    const {nombre, value} = e.target;
+    setUser({...user, [nombre]:value})
+  }
 
-const Formulario = () => {
-  const [formularioenviado, cambiarformularioenviado] = useState(false); 
-	return (
+  const guardarDatos = async(e)=>{
+    e.preventDefault();
+    console.log(user);
+    setUser({...valorinicial});
+  }
+  
+  
+  return (
+     
     <div className='container'>
  <div className='fondo'>
- <form>
+ <form onSubmit={guardarDatos}>
  <img src={logo} className='logo' alt="logo" />
    <div className='campos'>
      <label className='labels' htmlFor='nombre'>Nombre</label>
@@ -22,6 +42,7 @@ const Formulario = () => {
      id='nombre'
      name='nombre'
       placeholder='Su nombre aqui...'
+      onChange={capturarInputs} value={user.nombre}
       />
    </div>
    <div className='campos'>
@@ -32,6 +53,7 @@ const Formulario = () => {
      id='Apellido'
      name='Apellido' 
      placeholder='Su apellido aqui...'
+     onChange={capturarInputs} value={user.Apellido}
      />
    </div>
    <div className='campos'>
@@ -42,6 +64,7 @@ const Formulario = () => {
      id='correo'
      name='correo' 
      placeholder='Su@correoaqui.com'
+     onChange={capturarInputs} value={user.Mail}
      />
    </div>
    <div className='campos'>
