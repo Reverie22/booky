@@ -6,38 +6,17 @@ import { Formik, Form, ErrorMessage, Field } from 'formik';
 
 
 
+
 const Formulario = () => {
   const [formularioenviado, cambiarformularioenviado] = useState(false); 
 	return (
-    <Formik
-    initialValues={{
-      nombre:'Tu nombre',
-      correo: 'Tucorreo@algo.com'
-    }}
-
-
-
-   
-    onSubmit={(valores)=>{
-
-      
-      console.log(valores);
-      console.log('form enviado');
-      cambiarformularioenviado(true);
-      console.log(cambiarformularioenviado);
-      
-
-
-    }}
-    
-    >
-		{( values,handleChange, handleBlur)=> (
+    <div className='container'>
  <div className='fondo'>
- <Form>
+ <form>
  <img src={logo} className='logo' alt="logo" />
    <div className='campos'>
      <label className='labels' htmlFor='nombre'>Nombre</label>
-     <Field 
+     <input 
      className='inputs' 
      type='text' 
      id='nombre'
@@ -47,7 +26,7 @@ const Formulario = () => {
    </div>
    <div className='campos'>
      <label className='labels' htmlFor='Apellido'>Apellido</label>
-     <Field 
+     <input 
      className='inputs' 
      type='text' 
      id='Apellido'
@@ -57,7 +36,7 @@ const Formulario = () => {
    </div>
    <div className='campos'>
      <label className='labels' htmlFor='correo'>correo</label>
-     <Field 
+     <input 
      className='inputs' 
      type='email' 
      id='correo'
@@ -67,7 +46,7 @@ const Formulario = () => {
    </div>
    <div className='campos'>
      <label className='labels' htmlFor='contraseña'>Contraseña</label>
-     <Field 
+     <input 
      className='inputs' 
      type='password' 
      id='contraseña'
@@ -76,12 +55,11 @@ const Formulario = () => {
      />
    </div>
    <button type='submit'>Enviar</button>
-   {formularioenviado && <p className='Enviado'>Formulario enviado con exito!</p>}
- </Form>
+ </form>
  </div>
-    )}
+    
    
-      </Formik>
+      </div>
 	);
 }
  
