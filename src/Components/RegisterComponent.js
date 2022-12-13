@@ -34,7 +34,7 @@ const Formulario = ({Correousuario}) => {
 
   const guardarDatos = async(e)=>{
     e.preventDefault();
-    // console.log(user);
+    console.log(user);
     try {
       await addDoc(collection(db,'users'),{
         ...user
@@ -45,14 +45,20 @@ const Formulario = ({Correousuario}) => {
     }
     setUser({...valorinicial})
   }
-  
-  
-let navigate = useNavigate();
-  return (
-    <div>
-    {
-   !user &&
+  let navigate = useNavigate();
+  const login = (HomeScreen) => {
+    setTimeout(() => {
+      navigate("/HomeScreen");
+      
+    }, 3000);
+   
 
+  }
+  
+  
+
+  return (
+     
 
  <div className='fondo'>
  <form onSubmit={guardarDatos}>
@@ -98,13 +104,9 @@ let navigate = useNavigate();
      onChange={capturarInputs} value={user.contraseña}
      />
    </div>
-   <button onClick={() => navigate("/HomeScreen")} type='submit'>Enviar</button>
+   <button  type='submit'>Enviar</button>
  </form>
  </div>
- }
- {user && <button className='Cerrarsesion'>Cerrar sesion</button>}
- </div>
-
 	);
 }
  
