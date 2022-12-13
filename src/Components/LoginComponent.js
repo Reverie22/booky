@@ -25,6 +25,14 @@ const Formulario = ({Correousuario}) => {
   const guardarDatos = async(e)=>{
     e.preventDefault();
     // console.log(user);
+    try {
+      await addDoc(collection(db,'users'),{
+        ...user
+    })
+    } catch (error) {
+      console.log(error)
+      
+    }
     setUser({...valorinicial})
   }
   
