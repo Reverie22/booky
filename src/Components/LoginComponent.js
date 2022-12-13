@@ -4,9 +4,10 @@ import '../Css/LoginScreenCSS.css';
 import React from 'react';
 import { getAuth, signOut } from 'firebase/auth';
 import firebaseApp from '../firebase/firebase';
-
+import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc} from 'firebase/firestore';
 
 const auth = getAuth(firebaseApp)
+const db = getFirestore(firebaseApp)
 const Formulario = ({Correousuario}) => {
 	const valorinicial = {
     nombre: '',
@@ -23,7 +24,7 @@ const Formulario = ({Correousuario}) => {
 
   const guardarDatos = async(e)=>{
     e.preventDefault();
-    console.log(user);
+    // console.log(user);
     setUser({...valorinicial})
   }
   
