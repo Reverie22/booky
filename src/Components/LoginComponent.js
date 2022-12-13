@@ -2,35 +2,35 @@ import logo from '../Imagenes/logo.png';
 import { useState } from 'react';
 import '../Css/LoginScreenCSS.css';
 import React from 'react';
-import { Formik, Form, ErrorMessage, Field } from 'formik';
-import { getAuth } from 'firebase/auth';
+import { getAuth, signOut } from 'firebase/auth';
+import firebaseApp from '../firebase/firebase';
 
 
-const auth = getAuth(appFirebase)
+const auth = getAuth(firebaseApp)
 const Formulario = ({Correousuario}) => {
 	const valorinicial = {
-    Nombre: '',
-    Apellido: '',
-    Contraseña: '',
-    Mail: '',
+    nombre: '',
+    apellido: '',
+    contraseña: '',
+    mail: '',
   }
-  const {user, setUser} = useState(valorinicial)
+  const [user, setUser] = useState(valorinicial)
 
   const capturarInputs = (e) => {
-    const {nombre, value} = e.target;
-    setUser({...user, [nombre]:value})
+    const {name, value} = e.target;
+    setUser({...user, [name]:value})
   }
 
   const guardarDatos = async(e)=>{
     e.preventDefault();
     console.log(user);
-    setUser({...valorinicial});
+    setUser({...valorinicial})
   }
   
   
   return (
      
-    <div className='container'>
+
  <div className='fondo'>
  <form onSubmit={guardarDatos}>
  <img src={logo} className='logo' alt="logo" />
@@ -39,21 +39,19 @@ const Formulario = ({Correousuario}) => {
      <input 
      className='inputs' 
      type='text' 
-     id='nombre'
-     name='nombre'
+     name="nombre"
       placeholder='Su nombre aqui...'
       onChange={capturarInputs} value={user.nombre}
       />
    </div>
    <div className='campos'>
-     <label className='labels' htmlFor='Apellido'>Apellido</label>
+     <label className='labels' htmlFor='apellido'>Apellido</label>
      <input 
      className='inputs' 
      type='text' 
-     id='Apellido'
-     name='Apellido' 
+     name='apellido' 
      placeholder='Su apellido aqui...'
-     onChange={capturarInputs} value={user.Apellido}
+     onChange={capturarInputs} value={user.apellido}
      />
    </div>
    <div className='campos'>
@@ -61,28 +59,25 @@ const Formulario = ({Correousuario}) => {
      <input 
      className='inputs' 
      type='email' 
-     id='correo'
-     name='correo' 
+     id='mail'
+     name='mail' 
      placeholder='Su@correoaqui.com'
-     onChange={capturarInputs} value={user.Mail}
+     onChange={capturarInputs} value={user.mail}
      />
    </div>
    <div className='campos'>
-     <label className='labels' htmlFor='contraseña'>Contraseña</label>
+     <label className='labels'>Contraseña</label>
      <input 
      className='inputs' 
      type='password' 
-     id='contraseña'
      name='contraseña' 
      placeholder='Su contraseña aqui...'
+     onChange={capturarInputs} value={user.contraseña}
      />
    </div>
    <button type='submit'>Enviar</button>
  </form>
  </div>
-    
-   
-      </div>
 	);
 }
  
