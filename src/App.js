@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Switch, Route, Link,} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, Routes,} from 'react-router-dom';
 import SplashScreen from './Screens/SplashScreen';
 import HomeScreen from './Screens/HomeScreen';
 import './Css/App.css';
@@ -21,24 +21,12 @@ function App() {
   return (
     
     <Router>
-      <Switch>
-        <Route path="/" exact>
-      <SplashScreen/>
-
-      </Route>
-      <Route path="/RegisterScreen">
-      <RegisterScreen/>
-      </Route>
-
-      <Route path="/LoginScreen">
-      <LoginScreen/>
-      </Route>
-
-      <Route path="/HomeScreen">
-      <HomeScreen/>
-      </Route>
-      </Switch>
-      
+      <Routes>
+        <Route path="/" element={<SplashScreen/>}/>
+        <Route path="/LoginScreen" element={<LoginScreen/>}/>
+        <Route path="/HomeScreen" element={<HomeScreen/>}/>
+        <Route path="/RegisterScreen" element={<RegisterScreen/>}/>
+        </Routes>
     </Router>
     
   );

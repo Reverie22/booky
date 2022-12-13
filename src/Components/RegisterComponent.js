@@ -1,20 +1,14 @@
 import logo from '../Imagenes/logo.png';
 import { useState } from 'react';
 import '../Css/RegisterScreenCSS.css';
+import { Link, Redirect, useNavigate } from 'react-router-dom';
 import React from 'react';
 import { getAuth, signOut } from 'firebase/auth';
 import firebaseApp from '../firebase/firebase';
 import {getFirestore, collection, addDoc, getDocs, doc, deleteDoc, getDoc, setDoc} from 'firebase/firestore';
-import HomeScreenComponent from './HomeScreenComponent';
+import HomeScreen from '../Screens/HomeScreen';
 
 //funciones
-const CambiarPantalla = () => {
-  console.log('hpla');
-  
-
-
-
-}
 
 const auth = getAuth(firebaseApp)
 const db = getFirestore(firebaseApp)
@@ -26,7 +20,13 @@ const Formulario = ({Correousuario}) => {
     mail: '',
   }
   const [user, setUser] = useState(valorinicial)
-
+  const CambiarPantalla = () => {
+    console.log('hpla');
+    useNavigate(HomeScreen)
+  
+  
+  }
+  
   const capturarInputs = (e) => {
     const {name, value} = e.target;
     setUser({...user, [name]:value})
@@ -47,6 +47,7 @@ const Formulario = ({Correousuario}) => {
   }
   
   
+let navigate = useNavigate();
   return (
      
 
@@ -94,7 +95,7 @@ const Formulario = ({Correousuario}) => {
      onChange={capturarInputs} value={user.contraseña}
      />
    </div>
-   <button onClick={CambiarPantalla} type='submit'>Enviar</button>
+   <button onClick={() => navigate("/HomeScreen")} type='submit'>Enviar</button>
  </form>
  </div>
 	);

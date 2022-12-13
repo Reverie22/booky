@@ -11,7 +11,7 @@ export default function SplashScreenComponent() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <body>
-      <a href='/LoginScreen' class="titulo-booky">¡Booky!</a>
+      <a href='/RegisterScreen' class="titulo-booky">¡Booky!</a>
       </body>
     </div>
   )
