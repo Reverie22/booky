@@ -46,14 +46,8 @@ const Formulario = ({Correousuario}) => {
     setUser({...valorinicial})
   }
   let navigate = useNavigate();
-  const login = (HomeScreen) => {
-    setTimeout(() => {
-      navigate("/HomeScreen");
-      
-    }, 3000);
-   
+  
 
-  }
   
   
 
@@ -104,7 +98,7 @@ const Formulario = ({Correousuario}) => {
      onChange={capturarInputs} value={user.contraseña}
      />
    </div>
-   <button  type='submit'>Enviar</button>
+   <button onClick={navigate("/HomeScreen")} type='submit'>Enviar</button>
  </form>
  </div>
 	);
